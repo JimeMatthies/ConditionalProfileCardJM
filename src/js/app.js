@@ -31,7 +31,10 @@ function render(variables = {}) {
   let username = variables.name !== null ? variables.name : "Lucy";
   let userlastname =
     variables.lastname !== null ? variables.lastname : "Boilett";
-  let usersocialside = variables.socialMediaPosition;
+  let usersocialside =
+    variables.socialMediaPosition == "position-left"
+      ? variables.socialMediaPosition
+      : "position-right";
   let usertwitter =
     variables.twitter !== null ? variables.twitter : "4geeksacademy";
   let usergithub =
@@ -53,7 +56,7 @@ function render(variables = {}) {
           <h1>${username} ${userlastname}</h1>
           <h2>${userrole}</h2>
           <h3>${usercity}, ${usercountry}</h3>
-          <ul class="position-right">
+          <ul class=${usersocialside}>
             <li><a href="https://twitter.com/${usertwitter}" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/${usergithub}" target="_blank"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/${userlinkedin}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
